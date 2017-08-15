@@ -24,7 +24,7 @@
 
 5 如有需要，添加日志删除crontab，日志格式tracing-xxx.log.yyyy-mm-dd
 
-5 参数说明
+6 参数说明
 
 - ${chuanyunPrefix} 是穿云平台部署目录. exp. /var/chuanyun
 -  ${applicationName} 是当前应用名， exp.
