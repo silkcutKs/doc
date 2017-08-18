@@ -7,7 +7,7 @@ https://github.com/chuan-yun/Molten
 ./configure --with-php-config=php-config --enable-level-id
 
 # 设置扩展信息(php.ini)
-extension=molten.so
-molten.enable=1
-molten.sink_log_path=/var/wd/log/tracing/php/
-molten.sampling_rate=1 //设置sampling
+extension=molten.so 
+molten.enable=1 
+molten.sink_log_path=/var/wd/log/tracing/php/ 
+molten.sampling_rate=1 //设置sampling 
