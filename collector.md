@@ -3,6 +3,11 @@
 
 ## how
 
+run
+
+bin/logstash -f chuanyun.conf
+
+
 use logstash (2.4.0), java 1.7 support
 
 https://www.elastic.co/downloads/past-releases/logstash-2-4-0
