@@ -20,7 +20,7 @@ filebeat.prospectors:
    paths:
      - ${chuanyun_prefix}/log/tracing/java/*.log
      - ${chuanyun_prefix}/log/tracing/php/*
-
+   tail_files: true
  #----------------------------- Logstash output --------------------------------
  output.logstash:
    # The Logstash hosts
