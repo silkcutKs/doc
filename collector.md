@@ -3,18 +3,14 @@
 
 ## how
 
-run
-
-bin/logstash -f chuanyun.conf
-
+### collector
 
 use logstash (2.4.0), java 1.7 support
 
 https://www.elastic.co/downloads/past-releases/logstash-2-4-0
 
 
-logstash config
-
+### logstash config
 
 ```config
 # get trace log
@@ -41,3 +37,7 @@ output {
      }
 }
 ```
+
+### run
+
+bin/logstash -f chuanyun.conf
