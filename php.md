@@ -11,6 +11,6 @@ extension=molten.so
 
 molten.enable=1 
 
-molten.sink_log_path=/var/wd/log/tracing/php/ 
+molten.sink_log_path=${chuanyun_prefix}/log/tracing/php/ 
 
 molten.sampling_rate=1 //设置sampling 
