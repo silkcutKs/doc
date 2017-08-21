@@ -3,6 +3,32 @@
 
 ## how
 
+we use logstash as server and  betas as agent.
+
+## beats
+
+download:https://www.elastic.co/downloads/beats/filebeat
+
+filename:filebeat.yml
+
+config:
+```config
+filebeat.prospectors:
+ - input_type: log
+
+   # Paths that should be crawled and fetched. Glob based paths.
+   paths:
+     - ${chuanyun_prefix}/log/tracing/java/*.log
+     - ${chuanyun_prefix}/log/tracing/php/*
+
+ #----------------------------- Logstash output --------------------------------
+ output.logstash:
+   # The Logstash hosts
+   hosts: ["localhost:5044"]
+
+```
+run: ./filebeat -e -c filebeat.yml
+
 ### collector
 
 use logstash (2.4.0), java 1.7 support
@@ -17,11 +43,8 @@ https://www.elastic.co/downloads/past-releases/logstash-2-4-0
 # input
 
 input {
-     file {
-         path => [
-             "${chuanyun_prefix}/log/tracing/java/*.log",
-             "${chuanyun_prefix}/log/tracing/php/*"
-         ]
+     beats {
+         port => 5044
      }
 }
 
