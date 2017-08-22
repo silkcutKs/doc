@@ -29,6 +29,30 @@ filebeat.prospectors:
 ```
 run: ./filebeat -e -c filebeat.yml
 
+
+直接通过beats进行收集，发送到kafka
+```config
+ filebeat.prospectors:
+
+ - input_type: log
+   # Paths that should be crawled and fetched. Glob based paths.
+   paths:
+     - /var/wd/log/tracing/java/*.log
+     - /var/wd/log/tracing/php/*
+   tail_files: true
+
+ #----------------------------- Logstash output --------------------------------
+ #output.logstash:
+   # The Logstash hosts
+   #hosts: ["localhost:5044"]
+ output.kafka:
+
+     hosts: ["localhost:9092"]
+
+     topic: "test1"
+
+```
+
 ### collector
 
 use logstash (2.4.0), java 1.7 support
