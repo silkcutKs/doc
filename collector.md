@@ -50,6 +50,9 @@ run: ./filebeat -e -c filebeat.yml
      hosts: ["localhost:9092"]
 
      topic: "test1"
+     
+     codec.format:
+         string: '%{[message]}'
 
 ```
 
